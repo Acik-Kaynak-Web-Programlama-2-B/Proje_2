@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haberler</title>
+    <style>
+        body {
+            background-color: #fdd2e1; /* Açık pembe rengi */
+            color: #333; /* Metin rengi */
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+
+        .haber {
+            background-color: #fff; /* Beyaz arkaplan */
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        a {
+            color: #007bff; /* Mavi renkli bağlantılar */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Haberler</h1>
+        {% for haber in haberler %}
+            <div class="haber">
+                <h2>{{ haber[0] }}</h2>
+                <p>{{ haber[3] }} - {{ haber[4] }}</p>
+                <p>{{ haber[2] }}</p>
+                <a href="{{ haber[1] }}" target="_blank">Devamını Oku</a>
+                <hr>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
